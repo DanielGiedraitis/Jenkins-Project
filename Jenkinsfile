@@ -10,9 +10,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo "Compiling java files"
-                sh 'javac -d . src/Student.java' // Compile Student.java
+                echo "Compiling the java files"
+                bat 'javac -cp "path/to/junit-jupiter-5.8.1.jar;path/to/junit-jupiter-api-5.8.1.jar" -d . src\\Student.java src\\StudentTest.java'
             }
         }
     }
 }
+
