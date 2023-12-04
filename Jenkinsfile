@@ -10,12 +10,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo "Compiling the java files"
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "Running the tests"
+                echo "Compiling java files"
+                sh 'javac -d . src/Student.java' // Compile Student.java
             }
         }
     }
